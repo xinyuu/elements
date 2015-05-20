@@ -1,0 +1,20 @@
+/**
+  Fifth is a demo element.
+  \color #606
+  \symbol Fv
+  \symmetries 0
+*/
+element Five{
+  Bool xFlip;
+  Void behave(){
+    EventWindow ew;
+    if (xFlip==false){
+        xFlip=true;
+        ew.swap(0,4);
+     }
+    else{
+        xFlip=false;
+        ew.swap(0,1);
+     }
+  }
+}

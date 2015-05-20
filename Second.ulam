@@ -1,0 +1,13 @@
+/**
+  Second is a demo element.
+  \color #2e2
+  \symbol S1
+  \symmetries normal
+*/
+element Second{
+
+  Void behave(){
+    EventWindow ep;
+    ep[1]=ep[0];
+  }
+}

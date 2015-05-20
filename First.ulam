@@ -1,0 +1,7 @@
+element First{
+  Void behave(){
+    EventWindow ew;
+    ew[1]=ew[0];
+  }
+}
+

@@ -1,0 +1,13 @@
+/**
+  Fourth is a demo element.
+  \color #770
+  \symbol F1
+  \symmetries normal
+*/
+element Four{
+
+  Void behave(){
+    EventWindow ep;
+    ep.swap(0,1);
+  }
+}
