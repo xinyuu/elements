@@ -1,0 +1,16 @@
+/**
+  Res is a demo element.
+  \color #2fb
+  \symbol R2
+  \symmetries all
+*/
+element Res2{
+  DebugUtils du;
+  EventWindow ew;
+  Void behave(){
+    if(ew[1] is Empty){
+      ew.swap(0,1);
+    }
+  }
+}
+

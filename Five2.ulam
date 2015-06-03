@@ -1,0 +1,24 @@
+/**
+  Fifth is a demo element.
+  \color #606
+  \symbol F2
+  \symmetries 0
+*/
+element Five2{
+  typedef EventWindow.Symmetry Symmetry;
+  Unsigned(2) ns;
+  Void behave(){
+    DebugUtils du;
+    EventWindow ew;
+
+    if(ns== 2){
+      ns=ns.minof;
+    }
+    else{
+      ns=ns+2;
+    }
+    du.print((Int) ns);
+    ew.changeSymmetry((Symmetry) ns);
+    ew.swap(0,2);
+  }
+}

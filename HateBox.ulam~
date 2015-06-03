@@ -1,0 +1,20 @@
+/**
+  Res is a demo element.
+  \color #202
+  \symbol R
+  \symmetries all
+*/
+element Res{
+  DebugUtils du;
+  EventWindow ew;
+
+  Void behave(){
+
+    if(ew[1] is Box){
+      Empty e;
+      ew[0]=e;
+    }
+    else ew.swap(0,1);
+  }
+}
+
