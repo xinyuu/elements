@@ -1,0 +1,27 @@
+/**
+  Provider is a demo element.
+  \color #fba
+  \symbol Pv
+  \symmetries normal
+*/
+element Provider{
+  DebugUtils du;
+  EventWindow ew;
+  AtomUtils au;
+  Random rm;
+  Unsigned(2) layer;
+  Void behave(){
+    WindowServices ws;
+    ws.reset(1,1);
+    Empty e;
+    Res r;
+    Int et=au.getType((Atom) e);
+    if(ws.scan(et)){
+      du.print((Int) ws.getPick(0));
+      if(rm.oneIn(10)){
+        ew[ws.getPick(0)]=r;
+      }
+    }
+  }
+}
+

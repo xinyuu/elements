@@ -1,0 +1,42 @@
+/**
+  Request is a demo element.
+  \color #740
+  \symbol Rq
+  \symmetries all
+*/
+element Request{
+  DebugUtils du;
+  EventWindow ew;
+  AtomUtils au;
+  Random rm;
+  Unsigned(5) density;
+  Unsigned(5) pvdrcnt;
+  Void diffuse(){
+    if(ew[1] is Empty){
+      ew.swap(0,1);
+    }
+  }
+  Void chkDense(){
+    WindowServices ws;
+    ws.reset(0,4);
+    Signal s;
+    Provider p;
+    Int st =au.getType((Atom) s);
+    Int pt =au.getType((Atom) p);
+    if(ws.scan(st,pt)){
+      density=ws.getHits(0);
+      pvdrcnt=ws.getHits(1);
+      if (pvdrcnt>0){
+        Empty e;
+        ew[0]=e;
+        return;
+      }
+    }
+    diffuse();
+  }
+
+  Void behave(){
+    chkDense();
+  }
+}
+
