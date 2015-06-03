@@ -2,11 +2,12 @@
   Second is a demo element.
   \color #2e2
   \symbol S1
-  \symmetries all
+  \symmetries normal
 */
 element Second{
-  EventWindow ep;
+
   Void behave(){
+    EventWindow ep;
     ep[1]=ep[0];
   }
 }
