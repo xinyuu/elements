@@ -1,0 +1,27 @@
+/**
+  RandomWalker is a demo element.
+  \color #3b7
+  \symbol Rw
+  \symmetries 0
+*/
+element RandomWalker{
+  Bool xFlip;
+  EventWindow ew;
+  Random rm;
+  Void behave(){
+    Int idx;
+
+    if (rm.oddsOf(2,3)){
+	return;
+    }
+    else{
+      if(rm.oneIn(2)){
+	idx = 4;
+      }else{
+	idx =1;
+      }
+      ew.swap(0,idx);
+      return;
+    }
+  }
+}

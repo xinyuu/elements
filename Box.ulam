@@ -1,19 +1,69 @@
 /**
   Box is a demo element.
-  \color #666
+  \color #a38
   \symbol Bx
   \symmetries normal
 */
 element Box{
+  DebugUtils du;
+  EventWindow ew;
+  AtomUtils au;
+  Random rd;
   Unsigned(3) ns;
+  Unsigned(10) id;
+  Int(8) countAlone;
   Void behave(){
-    DebugUtils du;
-    EventWindow ew;
+    Bool canSwap=true;
+    WindowServices ws;
+    if(id==0){
+      id=rd.between(1,(Int)id.maxof);
+    }
     if(ns==4){
       ns=0;
     }
     ns+=1;
     ew.changeSymmetry(ns);
-    ew.swap(0,1);
+    /*    if(ew[1] is Box){
+      Atom a=ew[1];
+      Box byou=(Box) a;
+      byou.countAlone+=1;
+      ew[1]=byou;
+      countAlone+=1;
+    }
+    if(ew[1] is Pbox){
+      Atom a=ew[1];
+      Pbox pyou=(Pbox) a;
+      pyou.countAlone+=1;
+      ew[1]=pyou;
+      countAlone+=1;
+      }*/
+    if((ew[1] is Box)||(ew[1] is Pbox)){
+      countAlone+=1;
+    }else if(ew[1] is Empty){
+      countAlone-=1;
+    }else if(ew[1] is Wall){
+      canSwap=false;
+    }
+    if(countAlone<=-10){
+      countAlone=0;
+    }else if(countAlone>0){
+      Pbox p;
+      p.ns=ns;
+      p.id=id;
+      ew[0]=p;
+    }
+    //    du.printContext();
+    if(canSwap){
+      ew.swap(0,1);
+    }else{
+      Empty e;
+      Int et=au.getType((Atom) e);
+      ws.reset(0,4);
+      if(ws.scan(et)){
+	Int slot = ws.getPick(0);
+	Marker m;
+	ew[slot]=m;
+      }
+    }
   }
 }

@@ -1,39 +1,46 @@
 /**                                      -*- mode:C++ -*- */
 
-#include "Ue_10133Box10.h"
+#include "Ue_102213Box10.h"
 #include "Uq_10109211EventWindow10.h"
-#include "Uq_102323C2D10.h"
 #include "Uq_1010919AtomUtils10.h"
+#include "Uq_10106Random10.h"
+#include "Ue_102689214WindowServices10.h"
+#include "Ue_102294Pbox10.h"
 #include "Ue_10105Empty10.h"
+#include "Ue_10104Wall10.h"
+#include "Ue_10106Marker10.h"
+#include "Uq_102323C2D10.h"
+#include "Uq_10105MDist10.h"
+#include "Uq_10104Fail10.h"
 
 namespace MFM{
 
 
-  //! DebugUtils.ulam:27:   Void print(Atom arg) { print(arg, cPRINT_MEMBERS); }
+  //! DebugUtils.ulam:28:   Void print(Atom arg) { print(arg, cPRINT_MEMBERS); }
   template<class EC, u32 POS>
   void Uq_10109210DebugUtils10<EC, POS>::Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_102961a<EC> Uv_3arg)
   {
 
-    //! DebugUtils.ulam:27:   Void print(Atom arg) { print(arg, cPRINT_MEMBERS); }
-    const T Uh_tmpval_unpacked_224 = Uv_3arg.read();
-    const Ui_Ut_102961a<EC> Uh_tmpval_unpacked_225(Uh_tmpval_unpacked_224);
-    const u32 Uh_tmpreg_loadable_226 = 25u;
-    const Ui_Ut_102321u Uh_tmpval_loadable_227(Uh_tmpreg_loadable_226);
-    Uf_5print(uc, Uv_4self, Uh_tmpval_unpacked_225, Uh_tmpval_loadable_227);
+    //! DebugUtils.ulam:28:   Void print(Atom arg) { print(arg, cPRINT_MEMBERS); }
+    const T Uh_tmpval_unpacked_3135 = Uv_3arg.read();
+    const Ui_Ut_102961a<EC> Uh_tmpval_unpacked_3136(Uh_tmpval_unpacked_3135);
+    const u32 Uh_tmpreg_loadable_3137 = 41u;
+    const Ui_Ut_102321u Uh_tmpval_loadable_3138(Uh_tmpreg_loadable_3137);
+    Uf_5print(uc, Uv_4self, Uh_tmpval_unpacked_3136, Uh_tmpval_loadable_3138);
 
   } // Uf_5print
 
 
 
-  //! DebugUtils.ulam:30:   Void printContext() { printContext(cPRINT_MEMBERS); }
+  //! DebugUtils.ulam:31:   Void printContext() { printContext(cPRINT_QUARK_MEMBERS); }
   template<class EC, u32 POS>
   void Uq_10109210DebugUtils10<EC, POS>::Uf_9212printContext(UlamContext<EC>& uc, T& Uv_4self)
   {
 
-    //! DebugUtils.ulam:30:   Void printContext() { printContext(cPRINT_MEMBERS); }
-    const u32 Uh_tmpreg_loadable_228 = 25u;
-    const Ui_Ut_102321u Uh_tmpval_loadable_229(Uh_tmpreg_loadable_228);
-    Uf_9212printContext(uc, Uv_4self, Uh_tmpval_loadable_229);
+    //! DebugUtils.ulam:31:   Void printContext() { printContext(cPRINT_QUARK_MEMBERS); }
+    const u32 Uh_tmpreg_loadable_3139 = 553u;
+    const Ui_Ut_102321u Uh_tmpval_loadable_3140(Uh_tmpreg_loadable_3139);
+    Uf_9212printContext(uc, Uv_4self, Uh_tmpval_loadable_3140);
 
   } // Uf_9212printContext
 

@@ -1,0 +1,68 @@
+/**
+  Pbox is a demo element.
+  \color #a63
+  \symbol Pb
+  \symmetries normal
+*/
+element Pbox{
+  DebugUtils du;
+  EventWindow ew;
+  AtomUtils au;
+  Random rd;
+  Unsigned(3) ns;
+  Unsigned(10) id;
+  Int(8) countAlone;
+  Int(8) abs;
+  Void behave(){
+    Bool canSwap=true;
+    WindowServices ws;
+    if(ns==4){
+      ns=0;
+    }
+    ns+=1;
+    ew.changeSymmetry(ns);
+    if(countAlone==0){
+      abs=1;
+    }else if(countAlone<0){
+      abs=(-1)*countAlone;
+    }
+    if(ew[1] is Box){
+      //Atom a=ew[1];
+      //Box byou=(Box) a;
+      //byou.countAlone+=1;
+      //ew[1]=byou;
+      countAlone+=2;
+    }else if(ew[1] is Pbox){
+      //Atom a=ew[1];
+      //Pbox pyou=(Pbox) a;
+      //pyou.countAlone+=1;
+      //ew[1]=pyou;
+      countAlone+=2;
+    }else if(ew[1] is Empty){
+      if(rd.oneIn((Int)abs)){
+	countAlone-=1;
+      }
+    }else if(ew[1] is Wall){
+      canSwap=false;
+    }
+    if(countAlone<=-15){
+      Box b;
+      b.ns=ns;
+      b.id=id;
+      ew[0]=b;
+    }
+    //du.printContext();
+    if(canSwap){
+      ew.swap(0,1);
+    }else{
+      Empty e;
+      Int et=au.getType((Atom) e);
+      ws.reset(0,4);
+      if(ws.scan(et)){
+	Int slot = ws.getPick(0);
+	Marker m;
+	ew[slot]=m;
+      }
+    }
+  }
+}

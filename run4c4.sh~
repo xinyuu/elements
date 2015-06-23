@@ -1,0 +1,9 @@
+#!bin/bash
+
+for(i=1;i<=20;i++)
+do
+echo $1
+#
+~/MFM/bin/mfms {4C4} -n -ep .gen/bin/libcue.so -cp ~/Desktop/4c4/d-parameter/run-10-$1.mfs -d /home/c/Desktop/2nd-rslt/rs10a/10-$1/ --run --haltafteraeps 6000
+#
+done

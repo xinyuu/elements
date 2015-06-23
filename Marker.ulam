@@ -1,0 +1,17 @@
+/**
+  Marker is a demo element.
+  \color #f0f
+  \symbol Mk
+  \symmetries all
+*/
+element Marker{
+  EventWindow ew;
+  Random rd;
+  Void behave(){
+    if(ew[1] is Empty){
+      if(rd.oneIn(100)){
+	ew.swap(0,1);
+      }
+    }   
+  }
+}

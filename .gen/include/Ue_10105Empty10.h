@@ -33,11 +33,18 @@
 
 #include "Ue_10105Empty10_Types.h"
 
-namespace MFM { template <class EC> struct Ue_10133Box10; }  //FORWARD
+namespace MFM { template <class EC> struct Ue_102213Box10; }  //FORWARD
 namespace MFM { template <class EC, u32 POS> struct Uq_10109210DebugUtils10; }  //FORWARD
 namespace MFM { template <class EC, u32 POS> struct Uq_10109211EventWindow10; }  //FORWARD
-namespace MFM { template <class EC, u32 POS> struct Uq_102323C2D10; }  //FORWARD
 namespace MFM { template <class EC, u32 POS> struct Uq_1010919AtomUtils10; }  //FORWARD
+namespace MFM { template <class EC, u32 POS> struct Uq_10106Random10; }  //FORWARD
+namespace MFM { template <class EC> struct Ue_102689214WindowServices10; }  //FORWARD
+namespace MFM { template <class EC> struct Ue_102294Pbox10; }  //FORWARD
+namespace MFM { template <class EC> struct Ue_10104Wall10; }  //FORWARD
+namespace MFM { template <class EC> struct Ue_10106Marker10; }  //FORWARD
+namespace MFM { template <class EC, u32 POS> struct Uq_102323C2D10; }  //FORWARD
+namespace MFM { template <class EC, u32 POS> struct Uq_10105MDist10; }  //FORWARD
+namespace MFM { template <class EC, u32 POS> struct Uq_10104Fail10; }  //FORWARD
 
 namespace MFM{
 

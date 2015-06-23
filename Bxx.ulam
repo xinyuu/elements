@@ -1,0 +1,19 @@
+/**
+  Bxx is a demo element.
+  \color #a38
+  \symbol Bx
+  \symmetries normal
+*/
+element Bxx{
+  DebugUtils du;
+  EventWindow ew;
+  Unsigned(3) ns;
+  Void behave(){
+    if(ns==4){
+      ns=0;
+    }
+    ns+=1;
+    ew.changeSymmetry(ns);
+    ew.swap(0,1);
+  }
+}

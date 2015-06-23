@@ -1,0 +1,20 @@
+/**
+  SpellShortR is a demo element.
+  \color #a1a
+  \symbol Sa
+  \symmetries normal
+*/
+element SpellShortR{
+  EventWindow ew;
+  Unsigned(3) ns;
+  Void behave(){
+    if(ns== 2){
+      ns=ns.minof;
+    }
+    else{
+      ns=ns+2;
+    }
+    ew.changeSymmetry(ns);
+    ew.swap(0,6);
+  }
+}

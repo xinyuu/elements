@@ -41,15 +41,14 @@ element Signal{
     ws.reset(1,4);
     Request r;
     Int rt=au.getType((Atom) r);
-    for(Int slot=ws.next();slot>=0;slot=ws.next()){
-      Atom a= ew[slot];
-      if(a is Request){
-        Request you=(Request) a;
-        if(density>you.density){
-          if(rdm.oneIn(2)){
-            ew.swap(0,slot);
-          }
-        }
+    if(ws.scan(rt)){//if there are nearby Request atoms
+      Int slot = ws.getPick(0);
+      Atom a= ew[slot];//pick a Request
+      Request you=(Request) a;
+      if(density>you.density){
+	if(rdm.oneIn(2)){
+	  ew.swap(0,slot);
+	}
       }
     }
   }

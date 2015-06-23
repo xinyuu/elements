@@ -1,0 +1,40 @@
+/**
+  SpellRight is a demo element.
+  \color #a1a
+  \symbol Sr
+  \symmetries normal
+*/
+element SpellRight{
+  Random rd;
+  EventWindow ew;
+  DebugUtils du;
+  Int(3) steps;
+  Unsigned(3) ns;
+  Unsigned abs(Int inp){
+    if(inp<0){
+       return (-1)*inp;
+    } 
+    return inp;
+  }
+  Int getStep(Unsigned(3) ns){
+    if (ns==2){
+      return -1;
+    }
+    return 1;
+  }
+  Void behave(){
+    if(abs((Int) steps)==1){
+      if(steps==1){ns=2;}
+      else{ns=0;}
+    }else if(steps<1){
+      if(rd.oneIn(2)){
+	ns=2;
+      }else{
+	ns=0;
+      }
+    }
+    steps+=getStep(ns);
+    ew.changeSymmetry(ns);
+    ew.swap(0,6);
+  }
+}

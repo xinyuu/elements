@@ -2,7 +2,7 @@
   Third is a demo element.
   \color #f0f
   \symbol T1
-  \symmetries normal
+  \symmetries all
 */
 element Third{
 

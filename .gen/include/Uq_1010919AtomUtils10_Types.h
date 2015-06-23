@@ -36,6 +36,21 @@ namespace MFM{
 } //MFM
 #endif /*Ud_Ui_Ut_10141i */
 
+#ifndef Ud_Ui_Ut_10181i
+#define Ud_Ui_Ut_10181i
+namespace MFM{
+  struct Ui_Ut_10181i
+  {
+    typedef BitField<BitVector<32>, VD::S32, 8, 24> BF;
+    BitVector<32> m_stg;
+    Ui_Ut_10181i() : m_stg() { }
+    Ui_Ut_10181i(const s32 d) : m_stg(d) {}
+    const s32 read() const { return BF::Read(m_stg); }
+    void write(const s32 v) { BF::Write(m_stg, v); }
+  };
+} //MFM
+#endif /*Ud_Ui_Ut_10181i */
+
 #ifndef Ud_Ui_Ut_102161i
 #define Ud_Ui_Ut_102161i
 namespace MFM{
@@ -66,6 +81,21 @@ namespace MFM{
 } //MFM
 #endif /*Ud_Ui_Ut_102321i */
 
+#ifndef Ud_Ui_Ut_10121u
+#define Ud_Ui_Ut_10121u
+namespace MFM{
+  struct Ui_Ut_10121u
+  {
+    typedef BitField<BitVector<32>, VD::U32, 2, 30> BF;
+    BitVector<32> m_stg;
+    Ui_Ut_10121u() : m_stg() { }
+    Ui_Ut_10121u(const u32 d) : m_stg(d) {}
+    const u32 read() const { return BF::Read(m_stg); }
+    void write(const u32 v) { BF::Write(m_stg, v); }
+  };
+} //MFM
+#endif /*Ud_Ui_Ut_10121u */
+
 #ifndef Ud_Ui_Ut_10131u
 #define Ud_Ui_Ut_10131u
 namespace MFM{
@@ -95,6 +125,70 @@ namespace MFM{
   };
 } //MFM
 #endif /*Ud_Ui_Ut_10161u */
+
+#ifndef Ud_Ui_Ut_14161u
+#define Ud_Ui_Ut_14161u
+namespace MFM{
+  struct Ui_Ut_14161u
+  {
+    typedef BitField<BitVector<32>, VD::BITS, 24, 8> BF;
+    BitVector<32> m_stg;
+    Ui_Ut_14161u() : m_stg() { }
+    Ui_Ut_14161u(const u32 d) : m_stg(d) {}
+    const u32 read() const { return BF::Read(m_stg); }   //reads entire array
+    const u32 readArrayItem(const u32 index, const u32 unitsize) const { return BF::ReadArray(m_stg, index, unitsize); }
+    void write(const u32 v) { BF::Write(m_stg, v); }   //writes entire array
+    void writeArrayItem(const u32 v, const u32 index, const u32 unitsize) { BF::WriteArray(m_stg, v, index, unitsize); }
+  };
+} //MFM
+#endif /*Ud_Ui_Ut_14161u */
+
+#ifndef Ud_Ui_Ut_10181u
+#define Ud_Ui_Ut_10181u
+namespace MFM{
+  struct Ui_Ut_10181u
+  {
+    typedef BitField<BitVector<32>, VD::U32, 8, 24> BF;
+    BitVector<32> m_stg;
+    Ui_Ut_10181u() : m_stg() { }
+    Ui_Ut_10181u(const u32 d) : m_stg(d) {}
+    const u32 read() const { return BF::Read(m_stg); }
+    void write(const u32 v) { BF::Write(m_stg, v); }
+  };
+} //MFM
+#endif /*Ud_Ui_Ut_10181u */
+
+#ifndef Ud_Ui_Ut_14181u
+#define Ud_Ui_Ut_14181u
+namespace MFM{
+  struct Ui_Ut_14181u
+  {
+    typedef BitField<BitVector<32>, VD::BITS, 32, 0> BF;
+    BitVector<32> m_stg;
+    Ui_Ut_14181u() : m_stg() { }
+    Ui_Ut_14181u(const u32 d) : m_stg(d) {}
+    const u32 read() const { return BF::Read(m_stg); }   //reads entire array
+    const u32 readArrayItem(const u32 index, const u32 unitsize) const { return BF::ReadArray(m_stg, index, unitsize); }
+    void write(const u32 v) { BF::Write(m_stg, v); }   //writes entire array
+    void writeArrayItem(const u32 v, const u32 index, const u32 unitsize) { BF::WriteArray(m_stg, v, index, unitsize); }
+  };
+} //MFM
+#endif /*Ud_Ui_Ut_14181u */
+
+#ifndef Ud_Ui_Ut_102101u
+#define Ud_Ui_Ut_102101u
+namespace MFM{
+  struct Ui_Ut_102101u
+  {
+    typedef BitField<BitVector<32>, VD::U32, 10, 22> BF;
+    BitVector<32> m_stg;
+    Ui_Ut_102101u() : m_stg() { }
+    Ui_Ut_102101u(const u32 d) : m_stg(d) {}
+    const u32 read() const { return BF::Read(m_stg); }
+    void write(const u32 v) { BF::Write(m_stg, v); }
+  };
+} //MFM
+#endif /*Ud_Ui_Ut_102101u */
 
 #ifndef Ud_Ui_Ut_102321u
 #define Ud_Ui_Ut_102321u
@@ -208,33 +302,33 @@ namespace MFM{
 } //MFM
 #endif /*Ud_Ui_Ut_102961a */
 
-#ifndef Ud_Ui_Ue_10133Box10
-#define Ud_Ui_Ue_10133Box10
+#ifndef Ud_Ui_Ue_102213Box10
+#define Ud_Ui_Ue_102213Box10
 namespace MFM{
 
-  template<class EC> class Ue_10133Box10;  //forward
+  template<class EC> class Ue_102213Box10;  //forward
 
   template<class EC>
-  struct Ui_Ue_10133Box10
+  struct Ui_Ue_102213Box10
   {
     typedef typename EC::ATOM_CONFIG AC;
     typedef typename AC::ATOM_TYPE T;
     enum { BPA = AC::BITS_PER_ATOM };
-    typedef Ue_10133Box10<EC> Us;
+    typedef Ue_102213Box10<EC> Us;
     T m_stg;  //possible storage here
     T& m_stgRef;  //storage ref
-    Ui_Ue_10133Box10() : m_stg(), m_stgRef(m_stg) { }
-    Ui_Ue_10133Box10(const T& d) : m_stg(d), m_stgRef(m_stg) {}
-    Ui_Ue_10133Box10(T& d, bool badass) : m_stg(), m_stgRef(d) {}
-    Ui_Ue_10133Box10(const Ui_Ue_10133Box10<EC>& d) : m_stg(d.m_stg), m_stgRef(m_stg) {}
-    ~Ui_Ue_10133Box10() {}
+    Ui_Ue_102213Box10() : m_stg(), m_stgRef(m_stg) { }
+    Ui_Ue_102213Box10(const T& d) : m_stg(d), m_stgRef(m_stg) {}
+    Ui_Ue_102213Box10(T& d, bool badass) : m_stg(), m_stgRef(d) {}
+    Ui_Ue_102213Box10(const Ui_Ue_102213Box10<EC>& d) : m_stg(d.m_stg), m_stgRef(m_stg) {}
+    ~Ui_Ue_102213Box10() {}
     const T read() const { return m_stgRef; }
     void write(const T& v) { m_stgRef = v; }
     BitVector<BPA>& getBits() { return m_stgRef.GetBits(); }
     T& getRef() { return m_stgRef; }
   };
 } //MFM
-#endif /*Ud_Ui_Ue_10133Box10 */
+#endif /*Ud_Ui_Ue_102213Box10 */
 
 #ifndef Ud_Ui_Uq_10109210DebugUtils10
 #define Ud_Ui_Uq_10109210DebugUtils10
@@ -343,58 +437,6 @@ namespace MFM{
 } //MFM
 #endif /*Ud_Ui_Uq_10109211EventWindow104auto */
 
-#ifndef Ud_Ui_Uq_102323C2D10
-#define Ud_Ui_Uq_102323C2D10
-namespace MFM{
-
-  template<class EC, u32 POS> class Uq_102323C2D10;  //forward
-
-  template<class EC>
-  struct Ui_Uq_102323C2D10
-  {
-    typedef typename EC::ATOM_CONFIG AC;
-    typedef typename AC::ATOM_TYPE T;
-    enum { BPA = AC::BITS_PER_ATOM };
-
-    typedef Uq_102323C2D10<EC, 64> Us;
-    typedef AtomicParameterType<EC, VD::BITS, 32, 64>  Up_Us;
-    T m_stg;  //storage here!
-    Ui_Uq_102323C2D10() : m_stg() { }
-    Ui_Uq_102323C2D10(const u32 d) { write(d); }
-    const u32 read() const { return Up_Us::Read(m_stg.GetBits() ); }
-    void write(const u32 v) { Up_Us::Write(m_stg.GetBits(), v); }
-    BitVector<BPA>& getBits() { return m_stg.GetBits(); }
-    T& getRef() { return m_stg; }
-  };
-} //MFM
-#endif /*Ud_Ui_Uq_102323C2D10 */
-
-#ifndef Ud_Ui_Uq_102323C2D104auto
-#define Ud_Ui_Uq_102323C2D104auto
-namespace MFM{
-
-  template<class EC>
-  struct Ui_Uq_102323C2D104auto : public Ui_Uq_102323C2D10<EC>
-  {
-    typedef typename EC::ATOM_CONFIG AC;
-    typedef typename AC::ATOM_TYPE T;
-    enum { BPA = AC::BITS_PER_ATOM };
-
-    T& m_stgToChange;  //ref to storage here!
-    const u32 m_pos;   //pos in atom
-    Ui_Uq_102323C2D104auto(T & realStg, u32 idx) : m_stgToChange(realStg), m_pos(idx)
-    {
-      const u32 val = realStg.GetBits().Read(m_pos + T::ATOM_FIRST_STATE_BIT, 32);
-      Ui_Uq_102323C2D10<EC>::write(val);
-    }
-    ~Ui_Uq_102323C2D104auto()
-    {
-      m_stgToChange.GetBits().Write(m_pos + T::ATOM_FIRST_STATE_BIT, 32, Ui_Uq_102323C2D10<EC>::read());
-    }
-  };
-} //MFM
-#endif /*Ud_Ui_Uq_102323C2D104auto */
-
 #ifndef Ud_Ui_Uq_1010919AtomUtils10
 #define Ud_Ui_Uq_1010919AtomUtils10
 namespace MFM{
@@ -447,6 +489,114 @@ namespace MFM{
 } //MFM
 #endif /*Ud_Ui_Uq_1010919AtomUtils104auto */
 
+#ifndef Ud_Ui_Uq_10106Random10
+#define Ud_Ui_Uq_10106Random10
+namespace MFM{
+
+  template<class EC, u32 POS> class Uq_10106Random10;  //forward
+
+  template<class EC>
+  struct Ui_Uq_10106Random10
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+
+    typedef Uq_10106Random10<EC, 96> Us;
+    typedef AtomicParameterType<EC, VD::BITS, 0, 96>  Up_Us;
+    T m_stg;  //storage here!
+    Ui_Uq_10106Random10() : m_stg() { }
+    Ui_Uq_10106Random10(const u32 d) { write(d); }
+    const u32 read() const { return Up_Us::Read(m_stg.GetBits() ); }
+    void write(const u32 v) { Up_Us::Write(m_stg.GetBits(), v); }
+    BitVector<BPA>& getBits() { return m_stg.GetBits(); }
+    T& getRef() { return m_stg; }
+  };
+} //MFM
+#endif /*Ud_Ui_Uq_10106Random10 */
+
+#ifndef Ud_Ui_Uq_10106Random104auto
+#define Ud_Ui_Uq_10106Random104auto
+namespace MFM{
+
+  template<class EC>
+  struct Ui_Uq_10106Random104auto : public Ui_Uq_10106Random10<EC>
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+
+    T& m_stgToChange;  //ref to storage here!
+    const u32 m_pos;   //pos in atom
+    Ui_Uq_10106Random104auto(T & realStg, u32 idx) : m_stgToChange(realStg), m_pos(idx)
+    {
+      const u32 val = realStg.GetBits().Read(m_pos + T::ATOM_FIRST_STATE_BIT, 0);
+      Ui_Uq_10106Random10<EC>::write(val);
+    }
+    ~Ui_Uq_10106Random104auto()
+    {
+      m_stgToChange.GetBits().Write(m_pos + T::ATOM_FIRST_STATE_BIT, 0, Ui_Uq_10106Random10<EC>::read());
+    }
+  };
+} //MFM
+#endif /*Ud_Ui_Uq_10106Random104auto */
+
+#ifndef Ud_Ui_Ue_102689214WindowServices10
+#define Ud_Ui_Ue_102689214WindowServices10
+namespace MFM{
+
+  template<class EC> class Ue_102689214WindowServices10;  //forward
+
+  template<class EC>
+  struct Ui_Ue_102689214WindowServices10
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+    typedef Ue_102689214WindowServices10<EC> Us;
+    T m_stg;  //possible storage here
+    T& m_stgRef;  //storage ref
+    Ui_Ue_102689214WindowServices10() : m_stg(), m_stgRef(m_stg) { }
+    Ui_Ue_102689214WindowServices10(const T& d) : m_stg(d), m_stgRef(m_stg) {}
+    Ui_Ue_102689214WindowServices10(T& d, bool badass) : m_stg(), m_stgRef(d) {}
+    Ui_Ue_102689214WindowServices10(const Ui_Ue_102689214WindowServices10<EC>& d) : m_stg(d.m_stg), m_stgRef(m_stg) {}
+    ~Ui_Ue_102689214WindowServices10() {}
+    const T read() const { return m_stgRef; }
+    void write(const T& v) { m_stgRef = v; }
+    BitVector<BPA>& getBits() { return m_stgRef.GetBits(); }
+    T& getRef() { return m_stgRef; }
+  };
+} //MFM
+#endif /*Ud_Ui_Ue_102689214WindowServices10 */
+
+#ifndef Ud_Ui_Ue_102294Pbox10
+#define Ud_Ui_Ue_102294Pbox10
+namespace MFM{
+
+  template<class EC> class Ue_102294Pbox10;  //forward
+
+  template<class EC>
+  struct Ui_Ue_102294Pbox10
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+    typedef Ue_102294Pbox10<EC> Us;
+    T m_stg;  //possible storage here
+    T& m_stgRef;  //storage ref
+    Ui_Ue_102294Pbox10() : m_stg(), m_stgRef(m_stg) { }
+    Ui_Ue_102294Pbox10(const T& d) : m_stg(d), m_stgRef(m_stg) {}
+    Ui_Ue_102294Pbox10(T& d, bool badass) : m_stg(), m_stgRef(d) {}
+    Ui_Ue_102294Pbox10(const Ui_Ue_102294Pbox10<EC>& d) : m_stg(d.m_stg), m_stgRef(m_stg) {}
+    ~Ui_Ue_102294Pbox10() {}
+    const T read() const { return m_stgRef; }
+    void write(const T& v) { m_stgRef = v; }
+    BitVector<BPA>& getBits() { return m_stgRef.GetBits(); }
+    T& getRef() { return m_stgRef; }
+  };
+} //MFM
+#endif /*Ud_Ui_Ue_102294Pbox10 */
+
 #ifndef Ud_Ui_Ue_10105Empty10
 #define Ud_Ui_Ue_10105Empty10
 namespace MFM{
@@ -474,4 +624,216 @@ namespace MFM{
   };
 } //MFM
 #endif /*Ud_Ui_Ue_10105Empty10 */
+
+#ifndef Ud_Ui_Ue_10104Wall10
+#define Ud_Ui_Ue_10104Wall10
+namespace MFM{
+
+  template<class EC> class Ue_10104Wall10;  //forward
+
+  template<class EC>
+  struct Ui_Ue_10104Wall10
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+    typedef Ue_10104Wall10<EC> Us;
+    T m_stg;  //possible storage here
+    T& m_stgRef;  //storage ref
+    Ui_Ue_10104Wall10() : m_stg(), m_stgRef(m_stg) { }
+    Ui_Ue_10104Wall10(const T& d) : m_stg(d), m_stgRef(m_stg) {}
+    Ui_Ue_10104Wall10(T& d, bool badass) : m_stg(), m_stgRef(d) {}
+    Ui_Ue_10104Wall10(const Ui_Ue_10104Wall10<EC>& d) : m_stg(d.m_stg), m_stgRef(m_stg) {}
+    ~Ui_Ue_10104Wall10() {}
+    const T read() const { return m_stgRef; }
+    void write(const T& v) { m_stgRef = v; }
+    BitVector<BPA>& getBits() { return m_stgRef.GetBits(); }
+    T& getRef() { return m_stgRef; }
+  };
+} //MFM
+#endif /*Ud_Ui_Ue_10104Wall10 */
+
+#ifndef Ud_Ui_Ue_10106Marker10
+#define Ud_Ui_Ue_10106Marker10
+namespace MFM{
+
+  template<class EC> class Ue_10106Marker10;  //forward
+
+  template<class EC>
+  struct Ui_Ue_10106Marker10
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+    typedef Ue_10106Marker10<EC> Us;
+    T m_stg;  //possible storage here
+    T& m_stgRef;  //storage ref
+    Ui_Ue_10106Marker10() : m_stg(), m_stgRef(m_stg) { }
+    Ui_Ue_10106Marker10(const T& d) : m_stg(d), m_stgRef(m_stg) {}
+    Ui_Ue_10106Marker10(T& d, bool badass) : m_stg(), m_stgRef(d) {}
+    Ui_Ue_10106Marker10(const Ui_Ue_10106Marker10<EC>& d) : m_stg(d.m_stg), m_stgRef(m_stg) {}
+    ~Ui_Ue_10106Marker10() {}
+    const T read() const { return m_stgRef; }
+    void write(const T& v) { m_stgRef = v; }
+    BitVector<BPA>& getBits() { return m_stgRef.GetBits(); }
+    T& getRef() { return m_stgRef; }
+  };
+} //MFM
+#endif /*Ud_Ui_Ue_10106Marker10 */
+
+#ifndef Ud_Ui_Uq_102323C2D10
+#define Ud_Ui_Uq_102323C2D10
+namespace MFM{
+
+  template<class EC, u32 POS> class Uq_102323C2D10;  //forward
+
+  template<class EC>
+  struct Ui_Uq_102323C2D10
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+
+    typedef Uq_102323C2D10<EC, 64> Us;
+    typedef AtomicParameterType<EC, VD::BITS, 32, 64>  Up_Us;
+    T m_stg;  //storage here!
+    Ui_Uq_102323C2D10() : m_stg() { }
+    Ui_Uq_102323C2D10(const u32 d) { write(d); }
+    const u32 read() const { return Up_Us::Read(m_stg.GetBits() ); }
+    void write(const u32 v) { Up_Us::Write(m_stg.GetBits(), v); }
+    BitVector<BPA>& getBits() { return m_stg.GetBits(); }
+    T& getRef() { return m_stg; }
+  };
+} //MFM
+#endif /*Ud_Ui_Uq_102323C2D10 */
+
+#ifndef Ud_Ui_Uq_102323C2D104auto
+#define Ud_Ui_Uq_102323C2D104auto
+namespace MFM{
+
+  template<class EC>
+  struct Ui_Uq_102323C2D104auto : public Ui_Uq_102323C2D10<EC>
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+
+    T& m_stgToChange;  //ref to storage here!
+    const u32 m_pos;   //pos in atom
+    Ui_Uq_102323C2D104auto(T & realStg, u32 idx) : m_stgToChange(realStg), m_pos(idx)
+    {
+      const u32 val = realStg.GetBits().Read(m_pos + T::ATOM_FIRST_STATE_BIT, 32);
+      Ui_Uq_102323C2D10<EC>::write(val);
+    }
+    ~Ui_Uq_102323C2D104auto()
+    {
+      m_stgToChange.GetBits().Write(m_pos + T::ATOM_FIRST_STATE_BIT, 32, Ui_Uq_102323C2D10<EC>::read());
+    }
+  };
+} //MFM
+#endif /*Ud_Ui_Uq_102323C2D104auto */
+
+#ifndef Ud_Ui_Uq_10105MDist10
+#define Ud_Ui_Uq_10105MDist10
+namespace MFM{
+
+  template<class EC, u32 POS> class Uq_10105MDist10;  //forward
+
+  template<class EC>
+  struct Ui_Uq_10105MDist10
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+
+    typedef Uq_10105MDist10<EC, 96> Us;
+    typedef AtomicParameterType<EC, VD::BITS, 0, 96>  Up_Us;
+    T m_stg;  //storage here!
+    Ui_Uq_10105MDist10() : m_stg() { }
+    Ui_Uq_10105MDist10(const u32 d) { write(d); }
+    const u32 read() const { return Up_Us::Read(m_stg.GetBits() ); }
+    void write(const u32 v) { Up_Us::Write(m_stg.GetBits(), v); }
+    BitVector<BPA>& getBits() { return m_stg.GetBits(); }
+    T& getRef() { return m_stg; }
+  };
+} //MFM
+#endif /*Ud_Ui_Uq_10105MDist10 */
+
+#ifndef Ud_Ui_Uq_10105MDist104auto
+#define Ud_Ui_Uq_10105MDist104auto
+namespace MFM{
+
+  template<class EC>
+  struct Ui_Uq_10105MDist104auto : public Ui_Uq_10105MDist10<EC>
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+
+    T& m_stgToChange;  //ref to storage here!
+    const u32 m_pos;   //pos in atom
+    Ui_Uq_10105MDist104auto(T & realStg, u32 idx) : m_stgToChange(realStg), m_pos(idx)
+    {
+      const u32 val = realStg.GetBits().Read(m_pos + T::ATOM_FIRST_STATE_BIT, 0);
+      Ui_Uq_10105MDist10<EC>::write(val);
+    }
+    ~Ui_Uq_10105MDist104auto()
+    {
+      m_stgToChange.GetBits().Write(m_pos + T::ATOM_FIRST_STATE_BIT, 0, Ui_Uq_10105MDist10<EC>::read());
+    }
+  };
+} //MFM
+#endif /*Ud_Ui_Uq_10105MDist104auto */
+
+#ifndef Ud_Ui_Uq_10104Fail10
+#define Ud_Ui_Uq_10104Fail10
+namespace MFM{
+
+  template<class EC, u32 POS> class Uq_10104Fail10;  //forward
+
+  template<class EC>
+  struct Ui_Uq_10104Fail10
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+
+    typedef Uq_10104Fail10<EC, 96> Us;
+    typedef AtomicParameterType<EC, VD::BITS, 0, 96>  Up_Us;
+    T m_stg;  //storage here!
+    Ui_Uq_10104Fail10() : m_stg() { }
+    Ui_Uq_10104Fail10(const u32 d) { write(d); }
+    const u32 read() const { return Up_Us::Read(m_stg.GetBits() ); }
+    void write(const u32 v) { Up_Us::Write(m_stg.GetBits(), v); }
+    BitVector<BPA>& getBits() { return m_stg.GetBits(); }
+    T& getRef() { return m_stg; }
+  };
+} //MFM
+#endif /*Ud_Ui_Uq_10104Fail10 */
+
+#ifndef Ud_Ui_Uq_10104Fail104auto
+#define Ud_Ui_Uq_10104Fail104auto
+namespace MFM{
+
+  template<class EC>
+  struct Ui_Uq_10104Fail104auto : public Ui_Uq_10104Fail10<EC>
+  {
+    typedef typename EC::ATOM_CONFIG AC;
+    typedef typename AC::ATOM_TYPE T;
+    enum { BPA = AC::BITS_PER_ATOM };
+
+    T& m_stgToChange;  //ref to storage here!
+    const u32 m_pos;   //pos in atom
+    Ui_Uq_10104Fail104auto(T & realStg, u32 idx) : m_stgToChange(realStg), m_pos(idx)
+    {
+      const u32 val = realStg.GetBits().Read(m_pos + T::ATOM_FIRST_STATE_BIT, 0);
+      Ui_Uq_10104Fail10<EC>::write(val);
+    }
+    ~Ui_Uq_10104Fail104auto()
+    {
+      m_stgToChange.GetBits().Write(m_pos + T::ATOM_FIRST_STATE_BIT, 0, Ui_Uq_10104Fail10<EC>::read());
+    }
+  };
+} //MFM
+#endif /*Ud_Ui_Uq_10104Fail104auto */
 

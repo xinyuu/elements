@@ -1,10 +1,17 @@
 /**                                      -*- mode:C++ -*- */
 
-#include "Ue_10133Box10.h"
+#include "Ue_102213Box10.h"
 #include "Uq_10109210DebugUtils10.h"
 #include "Uq_10109211EventWindow10.h"
-#include "Uq_102323C2D10.h"
+#include "Uq_10106Random10.h"
+#include "Ue_102689214WindowServices10.h"
+#include "Ue_102294Pbox10.h"
 #include "Ue_10105Empty10.h"
+#include "Ue_10104Wall10.h"
+#include "Ue_10106Marker10.h"
+#include "Uq_102323C2D10.h"
+#include "Uq_10105MDist10.h"
+#include "Uq_10104Fail10.h"
 
 namespace MFM{
 
@@ -18,13 +25,13 @@ namespace MFM{
     Ui_Ue_10105Empty10<EC> Uv_1a = Ue_10105Empty10<EC>::THE_INSTANCE.GetDefaultAtom();
 
     //! AtomUtils.ulam:19:     return getType((Atom) a);
-    const T Uh_tmpval_unpacked_3510 = Uv_1a.read();
-    const Ui_Ut_102961a<EC> Uh_tmpval_unpacked_3511(Uh_tmpval_unpacked_3510);
-    const Ui_Ut_102321i Uh_tmpval_loadable_3512 = Uf_7getType(uc, Uv_4self, Uh_tmpval_unpacked_3511);
-    const s32 Uh_tmpreg_loadable_3513 = Uh_tmpval_loadable_3512.read();
-    const s32 Uh_tmpreg_loadable_3514 = _SignExtend32(Uh_tmpreg_loadable_3513, 32);
-    const Ui_Ut_102321i Uh_tmpval_loadable_3515(Uh_tmpreg_loadable_3514);
-    return (Uh_tmpval_loadable_3515);
+    const T Uh_tmpval_unpacked_3280 = Uv_1a.read();
+    const Ui_Ut_102961a<EC> Uh_tmpval_unpacked_3281(Uh_tmpval_unpacked_3280);
+    const Ui_Ut_102321i Uh_tmpval_loadable_3282 = Uf_7getType(uc, Uv_4self, Uh_tmpval_unpacked_3281);
+    const s32 Uh_tmpreg_loadable_3283 = Uh_tmpval_loadable_3282.read();
+    const s32 Uh_tmpreg_loadable_3284 = _SignExtend32(Uh_tmpreg_loadable_3283, 32);
+    const Ui_Ut_102321i Uh_tmpval_loadable_3285(Uh_tmpreg_loadable_3284);
+    return (Uh_tmpval_loadable_3285);
 
   } // Uf_9212getEmptyType
 
@@ -36,17 +43,17 @@ namespace MFM{
   {
 
     //! AtomUtils.ulam:27:     return getType(a)==getEmptyType();
-    const Ui_Ut_102321i Uh_tmpval_loadable_3516 = Uf_9212getEmptyType(uc, Uv_4self);
-    const s32 Uh_tmpreg_loadable_3517 = Uh_tmpval_loadable_3516.read();
-    const s32 Uh_tmpreg_loadable_3518 = _SignExtend32(Uh_tmpreg_loadable_3517, 32);
-    const T Uh_tmpval_unpacked_3519 = Uv_1a.read();
-    const Ui_Ut_102961a<EC> Uh_tmpval_unpacked_3520(Uh_tmpval_unpacked_3519);
-    const Ui_Ut_102321i Uh_tmpval_loadable_3521 = Uf_7getType(uc, Uv_4self, Uh_tmpval_unpacked_3520);
-    const s32 Uh_tmpreg_loadable_3522 = Uh_tmpval_loadable_3521.read();
-    const s32 Uh_tmpreg_loadable_3523 = _SignExtend32(Uh_tmpreg_loadable_3522, 32);
-    const u32 Uh_tmpreg_loadable_3524 = _BinOpCompareEqEqInt32(Uh_tmpreg_loadable_3523, Uh_tmpreg_loadable_3518, 32);
-    const Ui_Ut_10111b Uh_tmpval_loadable_3525(Uh_tmpreg_loadable_3524);
-    return (Uh_tmpval_loadable_3525);
+    const Ui_Ut_102321i Uh_tmpval_loadable_3286 = Uf_9212getEmptyType(uc, Uv_4self);
+    const s32 Uh_tmpreg_loadable_3287 = Uh_tmpval_loadable_3286.read();
+    const s32 Uh_tmpreg_loadable_3288 = _SignExtend32(Uh_tmpreg_loadable_3287, 32);
+    const T Uh_tmpval_unpacked_3289 = Uv_1a.read();
+    const Ui_Ut_102961a<EC> Uh_tmpval_unpacked_3290(Uh_tmpval_unpacked_3289);
+    const Ui_Ut_102321i Uh_tmpval_loadable_3291 = Uf_7getType(uc, Uv_4self, Uh_tmpval_unpacked_3290);
+    const s32 Uh_tmpreg_loadable_3292 = Uh_tmpval_loadable_3291.read();
+    const s32 Uh_tmpreg_loadable_3293 = _SignExtend32(Uh_tmpreg_loadable_3292, 32);
+    const u32 Uh_tmpreg_loadable_3294 = _BinOpCompareEqEqInt32(Uh_tmpreg_loadable_3293, Uh_tmpreg_loadable_3288, 32);
+    const Ui_Ut_10111b Uh_tmpval_loadable_3295(Uh_tmpreg_loadable_3294);
+    return (Uh_tmpval_loadable_3295);
 
   } // Uf_7isEmpty
 

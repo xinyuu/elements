@@ -33,11 +33,18 @@
 
 #include "Uq_10109210DebugUtils10_Types.h"
 
-namespace MFM { template <class EC> struct Ue_10133Box10; }  //FORWARD
+namespace MFM { template <class EC> struct Ue_102213Box10; }  //FORWARD
 namespace MFM { template <class EC, u32 POS> struct Uq_10109211EventWindow10; }  //FORWARD
-namespace MFM { template <class EC, u32 POS> struct Uq_102323C2D10; }  //FORWARD
 namespace MFM { template <class EC, u32 POS> struct Uq_1010919AtomUtils10; }  //FORWARD
+namespace MFM { template <class EC, u32 POS> struct Uq_10106Random10; }  //FORWARD
+namespace MFM { template <class EC> struct Ue_102689214WindowServices10; }  //FORWARD
+namespace MFM { template <class EC> struct Ue_102294Pbox10; }  //FORWARD
 namespace MFM { template <class EC> struct Ue_10105Empty10; }  //FORWARD
+namespace MFM { template <class EC> struct Ue_10104Wall10; }  //FORWARD
+namespace MFM { template <class EC> struct Ue_10106Marker10; }  //FORWARD
+namespace MFM { template <class EC, u32 POS> struct Uq_102323C2D10; }  //FORWARD
+namespace MFM { template <class EC, u32 POS> struct Uq_10105MDist10; }  //FORWARD
+namespace MFM { template <class EC, u32 POS> struct Uq_10104Fail10; }  //FORWARD
 
 namespace MFM{
 
@@ -66,72 +73,74 @@ namespace MFM{
 
     //! DebugUtils.ulam:12:   constant Unsigned cPRINT_MEMBER_VALUES =   0x00000008; //< Include data member values
 
-    //! DebugUtils.ulam:13:   constant Unsigned cPRINT_MEMBER_NAMES =    0x00000010; //< Include data member names
+    //! DebugUtils.ulam:13:   constant Unsigned cPRINT_MEMBER_BITVALS =  0x00000010; //< Include data member values as bits in hex
 
-    //! DebugUtils.ulam:14:   constant Unsigned cPRINT_MEMBER_TYPES =    0x00000020; //< Include data member types
+    //! DebugUtils.ulam:14:   constant Unsigned cPRINT_MEMBER_NAMES =    0x00000020; //< Include data member names
 
-    //! DebugUtils.ulam:15:   constant Unsigned cPRINT_SIZE0_MEMBERS =   0x00000040; //< Include size 0 data members
+    //! DebugUtils.ulam:15:   constant Unsigned cPRINT_MEMBER_TYPES =    0x00000040; //< Include data member types
 
-    //! DebugUtils.ulam:16:   constant Unsigned cPRINT_MEMBER_ARRAYS =   0x00000080; //< Print array values individually
+    //! DebugUtils.ulam:16:   constant Unsigned cPRINT_SIZE0_MEMBERS =   0x00000080; //< Include size 0 data members
 
-    //! DebugUtils.ulam:17:   constant Unsigned cPRINT_RECURSE_QUARKS =  0x00000100; //< Print quarks recursively
+    //! DebugUtils.ulam:17:   constant Unsigned cPRINT_MEMBER_ARRAYS =   0x00000100; //< Print array values individually
 
-    //! DebugUtils.ulam:19:   constant Unsigned cPRINT_NOTHING = Unsigned.minof;
+    //! DebugUtils.ulam:18:   constant Unsigned cPRINT_RECURSE_QUARKS =  0x00000200; //< Print quarks recursively
 
-    //! DebugUtils.ulam:20:   constant Unsigned cPRINT_HEX_ATOM = cPRINT_SYMBOL|cPRINT_ATOM_BODY;
+    //! DebugUtils.ulam:20:   constant Unsigned cPRINT_NOTHING = Unsigned.minof;
 
-    //! DebugUtils.ulam:21:   constant Unsigned cPRINT_TOP_MEMBERS = cPRINT_SYMBOL|cPRINT_MEMBER_VALUES;
+    //! DebugUtils.ulam:21:   constant Unsigned cPRINT_HEX_ATOM = cPRINT_SYMBOL|cPRINT_ATOM_BODY;
 
-    //! DebugUtils.ulam:22:   constant Unsigned cPRINT_MEMBERS = cPRINT_SYMBOL|cPRINT_MEMBER_NAMES|cPRINT_MEMBER_VALUES;
+    //! DebugUtils.ulam:22:   constant Unsigned cPRINT_TOP_MEMBERS = cPRINT_SYMBOL|cPRINT_MEMBER_VALUES;
 
-    //! DebugUtils.ulam:23:   constant Unsigned cPRINT_QUARK_MEMBERS = cPRINT_SYMBOL|cPRINT_MEMBER_VALUES|cPRINT_RECURSE_QUARKS;
+    //! DebugUtils.ulam:23:   constant Unsigned cPRINT_MEMBERS = cPRINT_SYMBOL|cPRINT_MEMBER_NAMES|cPRINT_MEMBER_VALUES;
 
-    //! DebugUtils.ulam:24:   constant Unsigned cPRINT_ALL_MEMBERS = cPRINT_SYMBOL|cPRINT_MEMBER_VALUES|cPRINT_RECURSE_QUARKS|cPRINT_MEMBER_ARRAYS;
+    //! DebugUtils.ulam:24:   constant Unsigned cPRINT_QUARK_MEMBERS = cPRINT_MEMBERS|cPRINT_RECURSE_QUARKS;
 
-    //! DebugUtils.ulam:25:   constant Unsigned cPRINT_EVERYTHING = Unsigned.maxof;
+    //! DebugUtils.ulam:25:   constant Unsigned cPRINT_ALL_MEMBERS = cPRINT_SYMBOL|cPRINT_MEMBER_VALUES|cPRINT_RECURSE_QUARKS|cPRINT_MEMBER_ARRAYS;
 
-
-    //! DebugUtils.ulam:35:   Void print(Int(4) arg) native;
-    static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_10141i Uv_3arg); //native
+    //! DebugUtils.ulam:26:   constant Unsigned cPRINT_EVERYTHING = Unsigned.maxof;
 
 
-    //! DebugUtils.ulam:36:   Void print(Int(3) arg) native;
-    static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_10131i Uv_3arg); //native
-
-
-    //! DebugUtils.ulam:37:   Void print(Unary(3) arg) native;
-    static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_10131y Uv_3arg); //native
-
-
-    //! DebugUtils.ulam:38:   Void print(Bool(3) arg) native;
-    static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_10131b Uv_3arg); //native
-
-
-    //! DebugUtils.ulam:34:   Void print(Int arg) native;
+    //! DebugUtils.ulam:35:   Void print(Int arg) native;
     static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_102321i Uv_3arg); //native
 
 
-    //! DebugUtils.ulam:33:   Void print(Unsigned arg) native;
+    //! DebugUtils.ulam:36:   Void print(Int(4) arg) native;
+    static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_10141i Uv_3arg); //native
+
+
+    //! DebugUtils.ulam:37:   Void print(Int(3) arg) native;
+    static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_10131i Uv_3arg); //native
+
+
+    //! DebugUtils.ulam:34:   Void print(Unsigned arg) native;
     static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_102321u Uv_3arg); //native
 
 
-    //! DebugUtils.ulam:27:   Void print(Atom arg) { print(arg, cPRINT_MEMBERS); }
+    //! DebugUtils.ulam:38:   Void print(Unary(3) arg) native;
+    static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_10131y Uv_3arg); //native
+
+
+    //! DebugUtils.ulam:39:   Void print(Bool(3) arg) native;
+    static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_10131b Uv_3arg); //native
+
+
+    //! DebugUtils.ulam:28:   Void print(Atom arg) { print(arg, cPRINT_MEMBERS); }
     static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_102961a<EC> Uv_3arg);
 
 
-    //! DebugUtils.ulam:28:   Void print(Atom a, Unsigned flags) native;
+    //! DebugUtils.ulam:29:   Void print(Atom a, Unsigned flags) native;
     static void Uf_5print(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_102961a<EC> Uv_1a, Ui_Ut_102321u Uv_5flags); //native
 
 
-    //! DebugUtils.ulam:30:   Void printContext() { printContext(cPRINT_MEMBERS); }
+    //! DebugUtils.ulam:31:   Void printContext() { printContext(cPRINT_QUARK_MEMBERS); }
     static void Uf_9212printContext(UlamContext<EC>& uc, T& Uv_4self);
 
 
-    //! DebugUtils.ulam:31:   Void printContext(Unsigned flags) native;
+    //! DebugUtils.ulam:32:   Void printContext(Unsigned flags) native;
     static void Uf_9212printContext(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_102321u Uv_5flags); //native
 
 
-    //! DebugUtils.ulam:39:   Void assert(Bool b) native;
+    //! DebugUtils.ulam:40:   Void assert(Bool b) native;
     static void Uf_6assert(UlamContext<EC>& uc, T& Uv_4self, Ui_Ut_10111b Uv_1b); //native
 
     //helper method not called directly
